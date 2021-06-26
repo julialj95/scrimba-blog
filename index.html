@@ -9,15 +9,18 @@
   <nav>
     <h1>BlogSpace</h1>
   </nav>
-  <main>
-    <fieldset>
+  <form>
+    <h3>Add Post</h3>
       <label for="title">Post Title</label>
-      <input type="text" id="title" />
+      <input type="text" id="title" name="title"/>
       <label for="post-body">Post Body</label>
-      <textarea id="post-body"></textarea>
+      <textarea id="post-body" name="post-body"></textarea>
       <button type="submit">Post</button>
-    </fieldset>
-    <div id="posts"></div>
-  </main>
+    </form>
+  <div id="posts"></div>
+
   <script src="index.js"></script>
 </body>
+</html>
+
+
