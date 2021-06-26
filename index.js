@@ -10,3 +10,15 @@ fetch("https://apis.scrimba.com/jsonplaceholder/posts")
     );
     postsDiv.innerHTML = posts;
   });
+
+document.getElementById("post-button").addEventListener("click", createPost);
+
+function createPost(e) {
+  e.preventDefault();
+  let newPost = {};
+  const postTitle = document.getElementById("title").value;
+  const postBody = document.getElementById("body").value;
+  newPost.title = postTitle;
+  newPost.body = postBody;
+  console.log(newPost);
+}
