@@ -28,8 +28,14 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 70px 20% 0 20%;
+  margin: 0;
+  padding-top: 70px;
   background-color: lightpink;
+}
+.form-element {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
 }
 form > h3 {
   text-align: center;
@@ -37,12 +43,12 @@ form > h3 {
 }
 form > button {
   width: 30%;
+  background-color: lightblue;
+  border-radius: 5px;
   margin: 10px auto 5px auto;
-}
-main {
-  margin-top: 55px;
 }
 .post-title,
 .post-body {
   text-align: center;
+  margin-top: 0;
 }
