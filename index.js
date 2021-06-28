@@ -15,10 +15,20 @@ document.getElementById("post-button").addEventListener("click", createPost);
 
 function createPost(e) {
   e.preventDefault();
-  let newPost = {};
   const postTitle = document.getElementById("title").value;
   const postBody = document.getElementById("body").value;
-  newPost.title = postTitle;
-  newPost.body = postBody;
-  console.log(newPost);
+  const data = {
+    title: postTitle,
+    body: postBody,
+  };
+
+  fetch("https://apis.scrimba.com/jsonplaceholder/posts", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data));
 }
