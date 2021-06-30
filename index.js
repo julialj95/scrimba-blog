@@ -1,4 +1,6 @@
 let postsArray = [];
+const titleInput = document.getElementById("title");
+const bodyInput = document.getElementById("body");
 
 fetch("https://apis.scrimba.com/jsonplaceholder/posts")
   .then((res) => res.json())
@@ -18,11 +20,9 @@ function renderPosts() {
 
 document.getElementById("post-button").addEventListener("click", function (e) {
   e.preventDefault();
-  const postTitle = document.getElementById("title").value;
-  const postBody = document.getElementById("body").value;
   const data = {
-    title: postTitle,
-    body: postBody,
+    title: titleInput.value,
+    body: bodyInput.value,
   };
 
   fetch("https://apis.scrimba.com/jsonplaceholder/posts", {
@@ -36,5 +36,7 @@ document.getElementById("post-button").addEventListener("click", function (e) {
     .then((post) => {
       postsArray.unshift({ title: post.title, body: post.body });
       renderPosts();
+      titleInput.value = "";
+      bodyInput.value = "";
     });
 });
