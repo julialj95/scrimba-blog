@@ -37,8 +37,7 @@ form.addEventListener("submit", function (e) {
     .then((post) => {
       postsArray.unshift({ title: post.title, body: post.body });
       renderPosts();
-      // titleInput.value = "";
-      // bodyInput.value = "";
+
       form.reset();
     });
 });
